@@ -110,7 +110,7 @@ class Server:
         Arguments:
         page: integer
         page_size: integer
-        """ 
+        """
         data = self.get_page(page, page_size)
         total_pages = math.ceil(len(self.dataset()) / page_size)
         pages = index_range(page, page_size)
