@@ -12,13 +12,13 @@ class BasicCache(BaseCaching):
         """ Initialize"""
         super().__init__()
 
-    def put(self, key = None, item = None):
+    def put(self, key=None, item=None):
         """ Add an item to the cache memory """
         if key and item:
             self.cache_data[key] = item
         return None
 
-    def get(self, key = None):
+    def get(self, key=None):
         """ Get an item from cache memory """
         if key:
             return self.cache_data.get(key)

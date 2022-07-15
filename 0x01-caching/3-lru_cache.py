@@ -15,7 +15,7 @@ class LRUCache(BaseCaching):
         super().__init__()
         self.queue = {}
 
-    def put(self, key, item):
+    def put(self, key=None, item=None):
         """Add an item to the cache memory"""
         if key and item:
             if len(self.cache_data) < BaseCaching.MAX_ITEMS\
@@ -39,8 +39,9 @@ class LRUCache(BaseCaching):
                         self.queue[k] = self.queue[k] - 1
                 self.queue[key] = len(self.queue) - 1
             self.cache_data[key] = item
+        return None
 
-    def get(self, key):
+    def get(self, key=None):
         """Get an item from cache memory"""
         if key:
             old_val = self.queue.get(key)
@@ -50,3 +51,4 @@ class LRUCache(BaseCaching):
                         self.queue[k] = self.queue[k] - 1
                 self.queue[key] = len(self.queue) - 1
             return self.cache_data.get(key)
+        return None

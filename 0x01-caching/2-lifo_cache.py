@@ -15,7 +15,7 @@ class LIFOCache(BaseCaching):
         super().__init__()
         self.key_indexes = []
 
-    def put(self, key = None, item = None):
+    def put(self, key=None, item=None):
         """ Add an item to the cache memory """
         if key and item:
             if len(self.cache_data) >= self.MAX_ITEMS:
@@ -29,8 +29,9 @@ class LIFOCache(BaseCaching):
 
             self.cache_data[key] = item
             self.key_indexes.append(key)
+        return None
 
-    def get(self, key = None):
+    def get(self, key=None):
         """ Get an item from the cache memory """
         if key in self.cache_data:
             return self.cache_data[key]
